@@ -257,32 +257,32 @@ img{display:block;max-width:100%;height:auto}
   .marca-visita{display:block}
 }
 
-/* Cobertura: césped simulado */
-.cob-cab{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:40px}
-.cob-cab .titular{margin:0}
-.cob-cab .control{margin:0}
-.control label{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--f-titulo);font-weight:700;margin-bottom:10px}
-.control output{font-family:var(--f-titulo);font-weight:800;color:var(--agua-honda);font-size:1.3rem}
-input[type=range]{width:100%;accent-color:var(--agua);height:30px}
-.atajos{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.atajos button{font-family:var(--f-texto);font-size:.82rem;font-weight:600;padding:7px 13px;border-radius:999px;border:1px solid var(--linea);background:var(--fondo);color:var(--tinta);cursor:pointer}
-.atajos button.bien{border-color:rgba(108,191,31,.6)}
-.atajos button.mal{border-color:rgba(229,138,40,.6)}
-.cesped{position:relative;border-radius:22px;overflow:hidden;background:#2F5E24;box-shadow:0 50px 90px -60px rgba(10,30,60,.6)}
-.cesped canvas{display:block;width:100%;aspect-ratio:2/1}
-.cesped .rotulo-lote{position:absolute;left:16px;top:14px;font-size:.78rem;font-weight:600;color:#fff;background:rgba(5,14,26,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:5px 11px;border-radius:999px}
-.cesped .ver-alcance{position:absolute;right:14px;top:12px;display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;color:#fff;background:rgba(5,14,26,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:5px 12px 5px 9px;border-radius:999px;cursor:pointer}
-.cesped .ver-alcance input{accent-color:var(--agua);margin:0}
-.cob-pie{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.6fr);gap:12px;margin-top:16px}
-.lectura{border:1px solid var(--linea);border-radius:14px;padding:12px 16px;min-width:0;background:var(--fondo)}
-.lectura span{display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;color:var(--tinta-2)}
-.lectura span i{width:12px;height:12px;border-radius:4px;flex-shrink:0}
-.lectura b{display:block;font-family:var(--f-titulo);font-size:1.7rem;font-weight:800;font-variant-numeric:tabular-nums;margin-top:2px;letter-spacing:-.02em}
-.veredicto{display:flex;align-items:center;padding:14px 18px;border-radius:14px;background:rgba(108,191,31,.13);color:var(--tinta);font-size:.98rem;font-weight:500;line-height:1.45}
-.veredicto.mal{background:rgba(229,138,40,.15)}
-@media (max-width:900px){.cob-cab{grid-template-columns:minmax(0,1fr);gap:28px}.cob-pie{grid-template-columns:repeat(3,minmax(0,1fr))}.veredicto{grid-column:1/-1}}
-@media (max-width:672px){.cesped canvas{aspect-ratio:3/2}.cesped{background:#0B1828}.cesped .rotulo-lote{position:static;display:block;border-radius:0;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;padding:10px 120px 10px 14px;font-size:.74rem}.cesped .ver-alcance{top:6px;right:8px;font-size:.72rem}}
-@media (max-width:420px){.lectura{padding:10px}.lectura b{font-size:1.3rem}.lectura span{font-size:.7rem}}
+/* Cobertura: comparación de césped */
+.comparar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.caso{border-radius:22px;overflow:hidden;background:var(--fondo);border:2px solid var(--linea);box-shadow:0 40px 80px -60px rgba(10,30,60,.6);min-width:0;display:flex;flex-direction:column}
+.caso.mal{border-color:rgba(214,72,48,.55)}
+.caso.bien{border-color:rgba(108,191,31,.75);box-shadow:0 40px 80px -50px rgba(78,156,23,.55)}
+.caso-cab{display:flex;align-items:center;gap:14px;padding:18px 22px}
+.caso.mal .caso-cab{background:rgba(214,72,48,.09)}
+.caso.bien .caso-cab{background:rgba(108,191,31,.12)}
+.sello-caso{flex-shrink:0;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.caso.mal .sello-caso{background:#D64830}
+.caso.bien .sello-caso{background:#4E9C17}
+.sello-caso svg{width:22px;height:22px}
+.caso-cab b{display:block;font-family:var(--f-titulo);font-weight:800;font-size:1.22rem;letter-spacing:-.015em;line-height:1.2}
+.caso.mal .caso-cab b{color:#B3361F}
+.caso.bien .caso-cab b{color:#3E7F12}
+.caso-cab small{display:block;color:var(--tinta-2);font-size:.88rem;margin-top:2px}
+.caso canvas{display:block;width:100%;aspect-ratio:3/2}
+.caso-pie{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:16px 18px 6px}
+.dato-caso{min-width:0}
+.dato-caso span{display:flex;align-items:center;gap:7px;font-size:.76rem;font-weight:600;color:var(--tinta-2)}
+.dato-caso span i{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+.dato-caso b{display:block;font-family:var(--f-titulo);font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.caso-texto{padding:6px 22px 22px;color:var(--tinta);font-size:.97rem;line-height:1.5}
+.cob-nota{margin-top:22px;text-align:center;color:var(--tinta-2);font-size:.92rem}
+@media (max-width:860px){.comparar{grid-template-columns:minmax(0,1fr);gap:22px}}
+@media (max-width:420px){.caso-cab{padding:14px 16px}.caso-cab b{font-size:1.08rem}.dato-caso b{font-size:1.2rem}.caso-texto{padding:6px 16px 18px}}
 
 /* Banda de imagen */
 .banda-img{position:relative;color:#fff;overflow:hidden;isolation:isolate;background:var(--noche)}
@@ -654,29 +654,34 @@ input[type=range]{width:100%;accent-color:var(--agua);height:30px}
 
   <section class="seccion seccion-gris" id="cobertura">
     <div class="envoltura">
-      <div class="cob-cab">
-        <div class="titular">
-          <span class="ceja">Por qué se diseña</span>
-          <h2>Ningún aspersor se ubica a ojo.</h2>
-          <p>Cuando los aspersores quedan separados de más, el césped lo muestra: amarillea donde llega poca agua y se seca donde no llega. Regar más tiempo no lo corrige; solo gasta más agua. Mové la separación y miralo.</p>
-        </div>
-        <div class="control">
-          <label for="separacion">Separación entre aspersores <output id="sep-txt" class="num">6,8 m</output></label>
-          <input type="range" id="separacion" min="4" max="8" step="0.1" value="6.8">
-          <div class="atajos"><button type="button" class="bien" data-sep="5">Bien diseñado · 5 m</button><button type="button" class="mal" data-sep="6.8">Mal diseñado · 6,8 m</button></div>
-        </div>
+      <div class="titular">
+        <span class="ceja">Por qué se diseña</span>
+        <h2>Ningún aspersor se ubica a ojo.</h2>
+        <p>El mismo lote, los mismos aspersores de 5 m de alcance. La única diferencia es dónde se ubican, y el césped lo muestra.</p>
       </div>
-      <div class="cesped">
-        <canvas id="lienzo" aria-label="Césped simulado: se ve verde donde llega bien el agua, amarillento donde llega poca y seco donde no llega"></canvas>
-        <span class="rotulo-lote" id="rotulo-lote">Lote de 27,2 × 13,6 m · 15 aspersores de 5 m</span>
-        <label class="ver-alcance" for="ver-alcance"><input type="checkbox" id="ver-alcance" checked>Ver alcance</label>
+      <div class="comparar">
+        <article class="caso mal">
+          <div class="caso-cab"><span class="sello-caso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></span><div><b>Riego mal diseñado</b><small>Aspersores separados de más, a 6,8 m, puestos a ojo</small></div></div>
+          <canvas id="cesped-mal" data-sep="6.8" aria-label="Riego mal diseñado: césped simulado con aspersores a 6,8 m"></canvas>
+          <div class="caso-pie">
+            <div class="dato-caso"><span><i style="background:#3F8F2C"></i>Verde parejo</span><b data-dato="verde">–</b></div>
+            <div class="dato-caso"><span><i style="background:#B3A841"></i>Amarillento</span><b data-dato="amarillo">–</b></div>
+            <div class="dato-caso"><span><i style="background:#C7A266"></i>Seco</span><b data-dato="seco">–</b></div>
+          </div>
+          <p class="caso-texto">Los aspersores no llegan uno al otro: el césped amarillea entre ellos y se seca en el medio. Regar más tiempo no lo corrige; solo gasta más agua.</p>
+        </article>
+        <article class="caso bien">
+          <div class="caso-cab"><span class="sello-caso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Así diseñamos nosotros</b><small>Aspersores a 5 m, cada uno llega al siguiente</small></div></div>
+          <canvas id="cesped-bien" data-sep="5" aria-label="Así diseñamos nosotros: césped simulado con aspersores a 5 m"></canvas>
+          <div class="caso-pie">
+            <div class="dato-caso"><span><i style="background:#3F8F2C"></i>Verde parejo</span><b data-dato="verde">–</b></div>
+            <div class="dato-caso"><span><i style="background:#B3A841"></i>Amarillento</span><b data-dato="amarillo">–</b></div>
+            <div class="dato-caso"><span><i style="background:#C7A266"></i>Seco</span><b data-dato="seco">–</b></div>
+          </div>
+          <p class="caso-texto">Cobertura de cabeza a cabeza, calculada antes de abrir la zanja: el agua cae pareja y todo el césped queda verde.</p>
+        </article>
       </div>
-      <div class="cob-pie" aria-live="polite">
-        <div class="lectura"><span><i style="background:#3F8F2C"></i>Verde parejo</span><b id="l-verde" class="num">0 %</b></div>
-        <div class="lectura"><span><i style="background:#B3A841"></i>Amarillento</span><b id="l-amarillo" class="num">0 %</b></div>
-        <div class="lectura"><span><i style="background:#C7A266"></i>Seco</span><b id="l-seco" class="num">0 %</b></div>
-        <p class="veredicto" id="veredicto"></p>
-      </div>
+      <p class="cob-nota">Simulación del reparto de agua en un lote de ejemplo.</p>
     </div>
   </section>
 
@@ -1033,47 +1038,41 @@ input[type=range]{width:100%;accent-color:var(--agua);height:30px}
     var tx=el('text',{x:x0+ancho/2,y:y0+42,'text-anchor':'middle','class':'g-txt'});tx.textContent='Aspersor n.°, desde la válvula hasta el final del caño';
   })();
 
-  // ---------- Césped simulado ----------
+  // ---------- Césped simulado: mal y bien diseñado ----------
   // Cada aspersor reparte menos agua cuanto más lejos cae (perfil triangular); con cobertura de cabeza a cabeza
   // la suma queda pareja. Lote de 4 × 3 aspersores en cuadrado, separados "s" metros, alcance 5 m.
   (function(){
-    var cv=document.getElementById('lienzo'),ctx=cv.getContext('2d'),rango=document.getElementById('separacion'),verAlc=document.getElementById('ver-alcance');
-    var COLS=5,FILAS=3,ALC=5;
+    var COLS=4,FILAS=3,ALC=5;
     var SECO=[199,162,102],PAJA=[184,168,74],AMAR=[150,160,58],VERDE=[70,140,46],HONDO=[46,108,34];
     function mezcla(a,b,f){return [a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f]}
-    function rampa(h){ // h: 0 seco … 1 sano
+    function rampa(h){
       if(h<.3)return mezcla(SECO,PAJA,h/.3);
       if(h<.6)return mezcla(PAJA,AMAR,(h-.3)/.3);
       if(h<.85)return mezcla(AMAR,VERDE,(h-.6)/.25);
       return mezcla(VERDE,HONDO,Math.min(1,(h-.85)/.15));
     }
-    // Ruido fijo para que el pasto tenga textura (no cambia al mover la separación)
-    var W=0,H=0,ruido=null,hojas=null;
+    var LUT=[];for(var u=0;u<=255;u++)LUT.push(rampa(u/255));
     function semilla(n){return function(){n=(n*16807)%2147483647;return (n-1)/2147483646}}
-    function prepararTextura(){
+    function textura(W,H){
       var al=semilla(7),g=24,gw=Math.ceil(W/g)+2,gh=Math.ceil(H/g)+2,red=new Float32Array(gw*gh);
       for(var i=0;i<red.length;i++)red[i]=al();
-      ruido=new Float32Array(W*H);
+      var ruido=new Float32Array(W*H);
       for(var y=0;y<H;y++)for(var x=0;x<W;x++){
         var fx=x/g,fy=y/g,ix=fx|0,iy=fy|0,tx=fx-ix,ty=fy-iy;
         var a=red[iy*gw+ix],b=red[iy*gw+ix+1],c=red[(iy+1)*gw+ix],d=red[(iy+1)*gw+ix+1];
-        var v=(a*(1-tx)+b*tx)*(1-ty)+(c*(1-tx)+d*tx)*ty;
-        ruido[y*W+x]=v*.6+al()*.4;
+        ruido[y*W+x]=((a*(1-tx)+b*tx)*(1-ty)+(c*(1-tx)+d*tx)*ty)*.6+al()*.4;
       }
-      var n=Math.round(W*H/30);hojas=new Float32Array(n*5);
-      for(var k=0;k<n;k++){hojas[k*5]=al()*W;hojas[k*5+1]=al()*H;hojas[k*5+2]=-Math.PI/2+(al()-.5)*.9;hojas[k*5+3]=(3+al()*6)*(W/900);hojas[k*5+4]=al()}
+      var n=Math.round(W*H/30),hojas=new Float32Array(n*5);
+      for(var k=0;k<n;k++){hojas[k*5]=al()*W;hojas[k*5+1]=al()*H;hojas[k*5+2]=-Math.PI/2+(al()-.5)*.9;hojas[k*5+3]=(3+al()*6)*(W/700);hojas[k*5+4]=al()}
+      return {ruido:ruido,hojas:hojas};
     }
-    var LUT=[];for(var u=0;u<=255;u++)LUT.push(rampa(u/255));
-    function fmt(v){return v.toFixed(1).replace('.',',')}
-    function dibujar(){
-      var css=cv.clientWidth||900,prop=cv.clientHeight&&cv.clientWidth?cv.clientHeight/cv.clientWidth:.5;COLS=prop<.58?5:4;
-      var s=parseFloat(rango.value),largo=(COLS-1)*s,ancho=(FILAS-1)*s;
-      var dpr=Math.min(window.devicePixelRatio||1,1.25),w=Math.round(css*dpr),h=Math.round(w*prop);
-      if(w!==W||h!==H){W=w;H=h;cv.width=W;cv.height=H;prepararTextura()}
-      // El lote ocupa el lienzo con un margen de medio alcance alrededor (pasto del vecino no cuenta)
-      var mg=Math.round(Math.min(W,H)*.045),LW=W-2*mg,LH=H-2*mg,escX=LW/largo,escY=LH/ancho;
+    function pintar(cv){
+      var ctx=cv.getContext('2d'),s=parseFloat(cv.getAttribute('data-sep')),largo=(COLS-1)*s,ancho=(FILAS-1)*s;
+      var css=cv.clientWidth||600,dpr=Math.min(window.devicePixelRatio||1,1.5),W=Math.round(css*dpr),H=Math.round(W*2/3);
+      if(cv.width!==W||cv.height!==H||!cv._tex){cv.width=W;cv.height=H;cv._tex=textura(W,H)}
+      var ruido=cv._tex.ruido,hojas=cv._tex.hojas;
+      var mg=Math.round(Math.min(W,H)*.05),LW=W-2*mg,LH=H-2*mg,escX=LW/largo,escY=LH/ancho;
       var cab=[];for(var i=0;i<COLS;i++)for(var j=0;j<FILAS;j++)cab.push([i*s,j*s]);
-      // Agua por punto, en una grilla gruesa
       var paso=4,gw=Math.ceil(LW/paso)+1,gh=Math.ceil(LH/paso)+1,salud=new Float32Array(gw*gh),cuenta=[0,0,0];
       for(var gy=0;gy<gh;gy++)for(var gx=0;gx<gw;gx++){
         var mx=Math.min(largo,gx*paso/escX),my=Math.min(ancho,gy*paso/escY),tot=0;
@@ -1083,49 +1082,40 @@ input[type=range]{width:100%;accent-color:var(--agua);height:30px}
       }
       function saludEn(x,y){x=Math.max(0,Math.min(LW,x-mg));y=Math.max(0,Math.min(LH,y-mg));var fx=x/paso,fy=y/paso,ix=Math.min(gw-2,fx|0),iy=Math.min(gh-2,fy|0),tx=fx-ix,ty=fy-iy;
         return (salud[iy*gw+ix]*(1-tx)+salud[iy*gw+ix+1]*tx)*(1-ty)+(salud[(iy+1)*gw+ix]*(1-tx)+salud[(iy+1)*gw+ix+1]*tx)*ty}
-      // Base del pasto
-      var img=ctx.createImageData(W,H),d=img.data;
+      var img=ctx.createImageData(W,H),dd=img.data;
       for(var y=0;y<H;y++)for(var x=0;x<W;x++){
         var k=(y*W+x)*4,r=ruido[y*W+x];
-        if(x<mg||y<mg||x>=W-mg||y>=H-mg){var pv=150+r*40;d[k]=pv;d[k+1]=pv-4;d[k+2]=pv-12;d[k+3]=255;continue}
-        var hv=saludEn(x,y),col=LUT[Math.max(0,Math.min(255,((hv+(r-.5)*.12)*255)|0))],luz=.78+r*.34;
-        d[k]=col[0]*luz;d[k+1]=col[1]*luz;d[k+2]=col[2]*luz;d[k+3]=255;
+        if(x<mg||y<mg||x>=W-mg||y>=H-mg){var pv=150+r*40;dd[k]=pv;dd[k+1]=pv-4;dd[k+2]=pv-12;dd[k+3]=255;continue}
+        var col=LUT[Math.max(0,Math.min(255,((saludEn(x,y)+(r-.5)*.12)*255)|0))],luz=.78+r*.34;
+        dd[k]=col[0]*luz;dd[k+1]=col[1]*luz;dd[k+2]=col[2]*luz;dd[k+3]=255;
       }
       ctx.putImageData(img,0,0);
-      // Hojas de pasto
-      ctx.lineCap='round';
       var grupos={};
       for(var b=0;b<hojas.length;b+=5){
-        var hx=hojas[b],hy=hojas[b+1];if(hx<mg+2||hy<mg+2||hx>W-mg-2||hy>H-mg-2)continue;var hv2=saludEn(hx,hy),tono=hojas[b+4],col2=LUT[Math.max(0,Math.min(255,((hv2+(tono-.5)*.2)*255)|0))];
+        var hx=hojas[b],hy=hojas[b+1];if(hx<mg+2||hy<mg+2||hx>W-mg-2||hy>H-mg-2)continue;
+        var hv=saludEn(hx,hy),tono=hojas[b+4],col2=LUT[Math.max(0,Math.min(255,((hv+(tono-.5)*.2)*255)|0))];
         var cl=(tono>.5?1.18:.8),clave=((col2[0]*cl)|0)>>3<<16|((col2[1]*cl)|0)>>3<<8|((col2[2]*cl)|0)>>3;
-        var lg=hojas[b+3]*(.55+hv2*.6),ang=hojas[b+2]+(1-hv2)*.5*(tono-.5);
+        var lg=hojas[b+3]*(.55+hv*.6),ang=hojas[b+2]+(1-hv)*.5*(tono-.5);
         (grupos[clave]||(grupos[clave]=[])).push(hx,hy,hx+Math.cos(ang)*lg,hy+Math.sin(ang)*lg);
       }
-      ctx.save();ctx.beginPath();ctx.rect(mg,mg,LW,LH);ctx.clip();ctx.lineWidth=Math.max(1,1.1*dpr);
-      for(var cl2 in grupos){var v=+cl2,arr=grupos[cl2];ctx.strokeStyle='rgb('+(((v>>16)&255)<<3)+','+(((v>>8)&255)<<3)+','+((v&255)<<3)+')';ctx.beginPath();for(var q=0;q<arr.length;q+=4){ctx.moveTo(arr[q],arr[q+1]);ctx.lineTo(arr[q+2],arr[q+3])}ctx.stroke()}
+      ctx.save();ctx.beginPath();ctx.rect(mg,mg,LW,LH);ctx.clip();ctx.lineCap='round';ctx.lineWidth=Math.max(1,1.1*dpr);
+      for(var g in grupos){var v=+g,arr=grupos[g];ctx.strokeStyle='rgb('+(((v>>16)&255)<<3)+','+(((v>>8)&255)<<3)+','+((v&255)<<3)+')';ctx.beginPath();for(var q=0;q<arr.length;q+=4){ctx.moveTo(arr[q],arr[q+1]);ctx.lineTo(arr[q+2],arr[q+3])}ctx.stroke()}
+      ctx.setLineDash([6*dpr,6*dpr]);ctx.lineWidth=1.3*dpr;ctx.strokeStyle='rgba(255,255,255,.5)';
+      cab.forEach(function(c){ctx.beginPath();ctx.ellipse(mg+c[0]*escX,mg+c[1]*escY,ALC*escX,ALC*escY,0,0,Math.PI*2);ctx.stroke()});
       ctx.restore();
-      // Alcances y cabezas
       ctx.strokeStyle='rgba(60,50,40,.55)';ctx.lineWidth=2*dpr;ctx.strokeRect(mg,mg,LW,LH);
-      if(verAlc.checked){ctx.save();ctx.beginPath();ctx.rect(mg,mg,LW,LH);ctx.clip();ctx.setLineDash([6*dpr,6*dpr]);ctx.lineWidth=1.3*dpr;ctx.strokeStyle='rgba(255,255,255,.55)';
-        cab.forEach(function(c){ctx.beginPath();ctx.ellipse(mg+c[0]*escX,mg+c[1]*escY,ALC*escX,ALC*escY,0,0,Math.PI*2);ctx.stroke()});ctx.restore()}
-      cab.forEach(function(c){var x=mg+c[0]*escX,y=mg+c[1]*escY,r=Math.max(4,(W<700?5:7)*dpr);
+      cab.forEach(function(c){var x=mg+c[0]*escX,y=mg+c[1]*escY,r=Math.max(4,(W<700?5:6.5)*dpr);
         ctx.beginPath();ctx.arc(x,y+1.5*dpr,r,0,Math.PI*2);ctx.fillStyle='rgba(0,0,0,.35)';ctx.fill();
         ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle='#1B2129';ctx.fill();ctx.lineWidth=2*dpr;ctx.strokeStyle='#E9EEF3';ctx.stroke();
         ctx.beginPath();ctx.arc(x,y,r*.35,0,Math.PI*2);ctx.fillStyle='#5CC8FF';ctx.fill()});
-      var tot2=cuenta[0]+cuenta[1]+cuenta[2],pc=function(v){return Math.round(v/tot2*100)+' %'};
-      document.getElementById('l-verde').textContent=pc(cuenta[0]);document.getElementById('l-amarillo').textContent=pc(cuenta[1]);document.getElementById('l-seco').textContent=pc(cuenta[2]);
-      document.getElementById('sep-txt').textContent=fmt(s)+' m';
-      document.getElementById('rotulo-lote').textContent='Lote de '+fmt(largo)+' × '+fmt(ancho)+' m · '+(COLS*FILAS)+' aspersores de 5 m';
-      var ver=document.getElementById('veredicto');
-      if(s<=ALC+.05){ver.textContent='Riego bien diseñado: cada aspersor llega al siguiente y el césped queda verde y parejo.';ver.classList.remove('mal')}
-      else if(cuenta[2]/tot2<.03){ver.textContent='Riego mal diseñado: los aspersores ya no se alcanzan entre sí y aparecen zonas amarillentas.';ver.classList.add('mal')}
-      else{ver.textContent='Riego mal diseñado: quedan zonas a las que no llega el agua y el césped se seca, aunque se riegue más tiempo.';ver.classList.add('mal')}
+      var tot2=cuenta[0]+cuenta[1]+cuenta[2],caso=cv.closest('.caso');
+      [['verde',0],['amarillo',1],['seco',2]].forEach(function(p){caso.querySelector('[data-dato="'+p[0]+'"]').textContent=Math.round(cuenta[p[1]]/tot2*100)+' %'});
     }
-    var pendiente=0;function pedir(){if(pendiente)return;pendiente=setTimeout(function(){pendiente=0;dibujar()},16)}
-    rango.addEventListener('input',pedir);verAlc.addEventListener('change',dibujar);addEventListener('resize',pedir);
-    document.querySelectorAll('[data-sep]').forEach(function(b){b.addEventListener('click',function(){rango.value=b.getAttribute('data-sep');dibujar()})});
-    window.__cesped=dibujar;
-    dibujar();
+    var lienzos=[document.getElementById('cesped-mal'),document.getElementById('cesped-bien')];
+    function todo(){lienzos.forEach(pintar)}
+    var t=0;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(todo,150)});
+    window.__cesped=todo;
+    todo();
   })();
 
   document.querySelectorAll('[data-copiar]').forEach(function(b){
