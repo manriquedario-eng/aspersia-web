@@ -93,7 +93,7 @@ img{display:block;max-width:100%;height:auto}
 .garantias span{display:inline-flex;align-items:center;gap:8px}
 .garantias svg{width:16px;height:16px;color:var(--lima)}
 
-.hud{position:absolute;z-index:3;right:max(24px,env(safe-area-inset-right,0px));bottom:36px;width:min(360px,calc(100% - 48px));border:1px solid rgba(92,200,255,.35);background:rgba(14,48,88,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:var(--radio);padding:16px 18px 14px;color:var(--noche-tinta);font-size:.82rem}
+.hud{position:absolute;z-index:3;right:max(24px,env(safe-area-inset-right,0px));bottom:24px;width:min(330px,calc(100% - 48px));border:1px solid rgba(92,200,255,.35);background:rgba(14,48,88,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:var(--radio);padding:16px 18px 14px;color:var(--noche-tinta);font-size:.82rem}
 .hud-cab{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
 .hud-cab b{font-family:var(--f-titulo);font-weight:700;font-size:.95rem;letter-spacing:-.01em}
 .hud-cab small{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--agua-clara);display:inline-flex;align-items:center;gap:6px}
@@ -126,7 +126,7 @@ img{display:block;max-width:100%;height:auto}
   .portada .envoltura{min-height:0;padding-block:116px 24px}
   .escena{position:relative;inset:auto;height:min(92vw,560px)}
   .portada.sin-3d .escena{background-position:50% 50%}
-  .hud{position:relative;right:auto;bottom:auto;width:auto;margin:-48px max(16px,env(safe-area-inset-right,0px)) 28px max(16px,env(safe-area-inset-left,0px))}
+  .hud{position:relative;right:auto;bottom:auto;width:auto;margin:14px max(16px,env(safe-area-inset-right,0px)) 28px max(16px,env(safe-area-inset-left,0px))}
   .esquinas{display:none}
 }
 
@@ -467,7 +467,7 @@ img{display:block;max-width:100%;height:auto}
           </figure>
           <div class="tec-texto">
             <span class="tec-num">01 · RELEVAMIENTO AÉREO</span>
-            <h3>Medimos tu terreno desde el aire, con dron propio.</h3>
+            <h3>Medimos tu terreno desde el aire con nuestro dron.</h3>
             <p>Fotografiamos el lote completo desde arriba y diseñamos sobre las medidas reales, no sobre un croquis a mano alzada. En terrenos grandes, barrios y espacios verdes es la diferencia entre un riego que cubre todo y uno que deja zonas secas.</p>
             <ul>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>Imagen aérea a escala de todo el terreno</li>
@@ -935,11 +935,11 @@ img{display:block;max-width:100%;height:auto}
     function medir(){
       var w=cont.clientWidth||1,h=cont.clientHeight||1;if(w===ancho&&h===alto)return;ancho=w;alto=h;ancha=window.innerWidth>980;
       ren.setSize(w,h,false);cam.aspect=w/h;
-      if(ancha)cam.setViewOffset(w,h,-w*.27,h*.03,w,h);else cam.clearViewOffset();
+      if(ancha)cam.setViewOffset(w,h,-w*.25,h*.12,w,h);else cam.clearViewOffset();
       cam.updateProjectionMatrix();
     }
     function ubicarCamara(t){
-      var ang=-.62+Math.sin(t*.09)*.16,dist=ancha?52:(cam.aspect<.9?60:52),altura=ancha?29:34;
+      var ang=-.62+Math.sin(t*.09)*.16,dist=ancha?(cam.aspect>1.9?58:64):(cam.aspect<.9?60:52),altura=ancha?31:34;
       cam.position.set(Math.sin(ang)*dist,altura,Math.cos(ang)*dist);cam.lookAt(ancha?1.5:0,0,ancha?1:.5);
     }
 
